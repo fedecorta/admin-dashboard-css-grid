@@ -1,0 +1,259 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+}
+
+.sidebar {
+    grid-column: 1 / 2;
+    background-color: rgb(25, 146, 212);
+    color: white;
+    font-weight: bold;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px 20px; /* Adjust padding as needed */
+    margin: 0;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.sidebar :first-child {
+    font-size: 30px;
+}
+
+
+.menu-item img {
+    margin-right: 15px; /* Space between icon and text */
+    width: 24px; /* Adjust icon size as needed */
+    height: 24px;
+}
+
+.menu-item:hover {
+    background-color: #1070a2; /* Darker blue on hover */
+}
+
+.main-content {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+    background-color: lightgray;
+}
+
+.header {
+    grid-column: 1 / -1; 
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: 1fr 1.5fr;
+    background-color: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+
+.search-bar {
+    background-color: lightgrey;
+    width: 500px;
+    height: 20px;
+    border-radius: 20px;
+}
+
+.search-left {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    gap: 5px;
+}
+
+.search-right {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 20px;
+}
+
+.search-right span {
+    font-weight: bold;
+}
+
+.search img {
+    height: 24px;
+    width: 24px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.user-left {
+    display: flex;
+    align-items: center;
+}
+
+.user-text{
+    display: flex;
+    flex-direction: column;
+    justify-self: start;
+    align-self: center;
+}
+
+.small-user-text{
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.big-user-text{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.user-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-right button {
+    border-style: none;
+    font-weight: bold;
+    color: white;
+    background-color: #1070a2;
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+}
+
+.user-info img {
+    height: 48px;
+    width: 48px;
+}
+
+.projects {
+    grid-column: 1;
+    grid-row: 2 / -1;
+    padding: 10px 20px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+
+}
+
+.project {
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-image {
+    display: flex;
+    justify-content: end; 
+}
+
+.project:before {
+    content: ""; 
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 10px; 
+    background-color: #FFD700;
+}
+
+.project img {
+    height: 24px;
+    width: 24px;
+}
+
+.announcements {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.announcement {
+    background-color:white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.announcement:not(:last-child):after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%; 
+    right: 10%; 
+    height: 1px;
+    background-color: #ccc; /* Gray color for the line */
+}
+
+.announcement h2 {
+    font-size: 15px;
+}
+
+.announcement p {
+    font-weight: normal;
+}
+
+.trending {
+    grid-column: 2;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.trending-item {
+    background-color:white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 5px;
+}
+
+.trending-item img {
+    height: 48px;
+    width: 48px;
+}
+
+.trending-text {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
